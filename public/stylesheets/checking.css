@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    text-align: center;
+}
+
+.wrapper {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+header {
+    height: 100px;
+    background: #38044d;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+}
+
+.logo {
+    width: 30%;
+    float: left;
+    line-height: 100px;
+}
+
+.logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: bignoodletitling;
+    color: #fff;
+    letter-spacing: 5px;
+}
+
+nav {
+    float: right;
+    line-height: 100px;
+}
+
+nav a {
+    text-decoration: none;
+    font-family: bignoodletitling;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+}
+
+banner-area {
+    width: 100px;
+    height: 150px;
+    position: fixed;
+    top: 100px;
+    background-image: url(123.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+}
+
+.banner-area h2 {
+    padding-top: 18%;
+    font-size: 70px;
+    font-family: poppins;
+    text-transform: uppercase;
+    color: #262626;
+}
+
+.content-area {
+    width: 100%;
+    position: relative;
+    top: 150px;
+    background: rgb(231, 200, 231);
+    height: 1500px;
+}
+
+.content-area h2 {
+    font-family: bignoodletitling;
+    letter-spacing: 4px;
+    padding-top: 30px;
+    font-size: 40px;
+    margin: 0;
+    color: #262626;
+}
+
+.content-area p {
+    padding: 2% 0;
+    font-family: merienda;
+    line-height: 30px;
+    color: #262626;
+}

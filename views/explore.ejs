@@ -1,0 +1,346 @@
+<html lang="en">
+
+<head>
+
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+  body {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .cont {
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-left: 120px;
+  }
+
+  .cont .card {
+    position: relative;
+    max-width: 300px;
+    height: 300px;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+    transition: 0.3s ease-in-out;
+
+  }
+
+  .cont .card:hover {
+    height: 520px;
+  }
+
+  .cont .card .imgBx {
+    position: relative;
+    width: 150px;
+    height: 200px;
+    top: -60px;
+    left: 20%;
+    z-index: 1;
+    box-shadow: 0 5px 202px rgba(0, 0, 0, 0.5);
+
+  }
+
+  .cont .card .imgBx img {
+    max-width: 100%;
+    border-radius: 4px;
+  }
+
+  .cont .card .content {
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+  }
+
+  .cont .card:hover .content {
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+
+  }
+
+  .wrapper {
+    width: 1170px;
+    margin: 0 auto;
+  }
+
+  header {
+    height: 100px;
+    background: #38044d;
+    width: 100%;
+    z-index: 12;
+    position: fixed;
+  }
+
+  .logo {
+    width: 30%;
+    float: left;
+    line-height: 100px;
+  }
+
+  .logo a {
+    text-decoration: none;
+    font-size: 30px;
+    font-family: bignoodletitling;
+    color: #fff;
+    letter-spacing: 5px;
+  }
+
+  /* nav {
+    float: right;
+    line-height: 100px;
+
+  } */
+
+  navi a {
+    text-decoration: none;
+    font-family: bignoodletitling;
+    letter-spacing: 4px;
+    font-size: 20px;
+    margin: 0 10px;
+    color: #fff;
+  }
+
+  navi a:hover {
+    text-align: center;
+    color: #57a2ce;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 2px 2px 20px rgba(136, 160, 211, 0.514);
+  }
+
+  banner-area {
+    width: 100px;
+    height: 150px;
+    /* position: fixed; */
+    top: 100px;
+    background-image: url(123.jpg);
+    -webkit-background-size: cover;
+    background-size: cover;
+    background-position: center center;
+    display: inline-flex;
+    border: 10px solid #111;
+    border-image: url(123.jpg) 30 round;
+  }
+
+  .banner-area h2 {
+    padding-top: 10%;
+    padding-bottom: 8%;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    font-size: 90px;
+    line-height: 160px;
+    margin-left: -10px;
+    color: transparent;
+    -webkit-text-stroke: 1px rgb(4, 50, 102);
+    background: url(anim.jpg);
+    -webkit-background-clip: text;
+    background-position: 0 0;
+    animation: anim 20s linear infinite;
+    font-weight: 400;
+  }
+
+  @keyframes anim {
+    100% {
+      background-position: 2000px 0;
+
+    }
+  }
+
+  #block {
+    float: center;
+    line-height: 100px;
+    background-color: transparent;
+
+  }
+
+  #block navi {
+    width: 100%;
+    height: 90px;
+    background-size: cover;
+    background-position: center center;
+    background-color: rgba(5, 71, 35, 0.623);
+
+  }
+
+  #block navi a {
+    text-decoration: none;
+    font-family: bignoodletitling;
+    letter-spacing: 5px;
+    font-size: 20px;
+    margin: 0 10px auto;
+    color: rgb(214, 234, 235);
+  }
+
+  #block navi a:hover {
+    text-align: center;
+    color: #22e02b;
+    border-radius: 2px;
+    position: relative;
+    box-shadow: 2px 2px 20px rgba(99, 224, 162, 0.479);
+  }
+
+  /* #block {
+    margin-top: -20px;
+  } */
+
+
+
+
+
+  .verticalLine {
+    border-left: thin solid rgb(131, 127, 127);
+    height: 100%;
+    margin-left: 50%;
+  }
+
+  body {
+    background-image: url(https://images6.alphacoders.com/438/438430.jpg);
+  }
+
+  .blog-slider__button {
+    display: inline-flex;
+    background-image: linear-gradient(147deg, #fe8a39 0%, #fd3838 74%);
+    padding: 15px 35px;
+    border-radius: 50px;
+    color: #fff;
+    box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);
+    text-decoration: none;
+    font-weight: 500;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  /*  @media screen and (max-width: 576px) {
+            .blog-slider__button {
+                width: 100%;
+            }
+        }*/
+</style>
+
+<body>
+
+  <%- include('./includes/header.ejs'); %>
+
+
+    <section>
+      <div class="box-area">
+
+
+        <div class="banner-area" style="background-image: url(https://wallpaperaccess.com/full/5650405.jpg);">
+          <h2>Explore your favourites</h2>
+        </div>
+
+      </div>
+      <!-- <div class="navbar" id="block">
+        <navi>
+          <a href="#">All</a>
+          <% for(let data of headerfooterdata) { %>
+            <a href="/category/<%=data.cag_id %>">
+              <%- data.cag_name%>
+            </a>
+            <% } %>
+              <a href="#">Comedy</a>
+          <a href="#">Fiction</a>
+          <a href="#">Romance</a> 
+        </navi>
+      </div> -->
+      <div class="cont">
+        <% for(let data of bookall) { %>
+          <div class="card mx-3">
+            <div class="imgBx">
+              <img src="/<%= data.book_cover%>">
+            </div>
+            <!-- <a href="" class="blog-slider__button"><svg
+            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+            class="bi bi-book my-1 mx-1" viewBox="0 0 16 16">
+            <path
+                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+        </svg>Read</a> -->
+            <div class="content">
+              <h5>
+                <%- data.book_name%>
+              </h5>
+              <p>
+                <%= data.book_about%>
+              </p>
+
+              <a href="/book/<%=data.book_id%>" class="blog-slider__button"><svg xmlns="http://www.w3.org/2000/svg"
+                  width="16" height="16" fill="currentColor" class="bi bi-book my-1 mx-1" viewBox="0 0 16 16">
+                  <path
+                    d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                </svg>Read</a>
+
+            </div>
+          </div>
+          <% } %>
+            <!-- <div class="card mx-4">
+          <div class="imgBx">
+            <img
+              src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217">
+          </div>
+          <div class="content">
+            <h2>Card Two</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa at beatae reiciendis! Explicabo
+              deserunt minus asperiores velit porro aliquam magnam labore cumque voluptas! Quod qui inventore
+              magni, quisquam quis laudantium.</p>
+          </div>
+        </div>
+        <div class="card mx-4">
+          <div class="imgBx">
+            <img
+              src="https://cdn.pastemagazine.com/www/system/images/photo_albums/best-book-covers-fall-2019/large/bbcdune.jpg?1384968217">
+          </div>
+          <div class="content">
+            <h2>Card Three</h2>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ipsa at beatae reiciendis! Explicabo
+              deserunt minus asperiores velit porro aliquam magnam labore cumque voluptas! Quod qui inventore
+              magni, quisquam quis laudantium.</p>
+          </div>
+        </div> -->
+
+      </div>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+      <script type="text/javascript"
+        src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+      <script type="text/javascript" src="script.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+      <%- include('./includes/footer.ejs'); %>
+
+</body>
+
+</html>

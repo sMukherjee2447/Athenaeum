@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ</title>
+    <link rel="stylesheet" href="accordion.css">
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+<!-- JavaScript Bundle with Popper -->
+
+
+</head>
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    font-family: Poppins;
+    box-sizing: border-box;
+}
+
+body {
+    display: block;
+    font-family: bignoodletitling;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://images6.alphacoders.com/438/438430.jpg);
+} 
+
+    .accordion{
+        width: 800px;
+       margin-top: 50px;
+       margin-bottom: 50px;
+        
+    }
+    .accordion .contentBx{
+        position: relative;
+        margin: 10px 20px;
+    }
+    .accordion .contentBx .label{
+        position: relative;
+        padding: 30px;
+        background: #129b5675;
+        color: #fff;
+        cursor: pointer;
+        font-size: 2.0rem;
+        width: 965px;
+        left: 175px;
+        
+       
+    }
+    .accordion .contentBx .label::before{
+        content: '+';
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+        font-size: 2.0em;
+    }
+    .accordion .contentBx.active .label::before{
+        content: '-';
+    }
+    .accordion .contentBx .content{
+        position: relative;
+       /** padding: 10px;**/
+        background: rgba(255, 255, 255, 0.507);
+        height: 0;
+        overflow: hidden;
+        transition: 0.5s;
+        overflow-y: auto;
+        font-size: 1.5rem;
+        width: 960px;
+        left: 175px; 
+    }
+    .accordion .contentBx.active .content{
+        height: 150px;
+        padding: 10px;
+    }
+    
+    .Banner
+    {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 2.5rem;
+        text-align: center;
+        /*padding: 20px;*/
+        top: 20px;
+        left: 150px;
+        /*background-image: url(https://miro.medium.com/max/1000/1*9quqCp7TnkWLGkc4OEq9yQ.jpeg);*/
+        background-image: url(https://www.symphonylimited.com/media/CMS-Invertor_FAQ.jpg);
+        background-size: cover;
+        height: 400px;
+        max-width: 1400px;
+        justify-content: center;
+        
+    }
+    .Banner h2{
+        position: relative;
+        color: rgba(5, 10, 92, 0.726);
+       /* background-color: aquamarine;*/
+        padding: 50px;
+        font-size: 3rem;
+    }
+
+
+
+ 
+</style>
+
+<body>
+  
+  <%- include('./includes/header.ejs'); %>
+
+    
+    <div class="Banner">
+        <!-- <h2><b>Frequenty Asked Questions <i>(FAQs)</i></b></h2> -->
+    </div>
+      <div class="accordion">
+        <div class="contentBx">
+             <div class="label">What does your website do?</div>
+             <div class="content">
+                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente qui animi velit neque vitae corrupti aut esse doloribus aspernatur!</p>
+             </div>
+        </div>
+        <div class="contentBx">
+         <div class="label">How can I remove the book I completed?</div>
+         <div class="content">
+             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente qui animi velit neque vitae corrupti aut esse doloribus aspernatur!</p>
+         </div>
+    </div>
+    <div class="contentBx">
+     <div class="label">Where does the book get added?</div>
+     <div class="content">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente qui animi velit neque vitae corrupti aut esse doloribus aspernatur!</p>
+     </div>
+ </div>
+ <div class="contentBx">
+     <div class="label">Why should I trust your website with my personal info? </div>
+     <div class="content">
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas sapiente qui animi velit neque vitae corrupti aut esse doloribus aspernatur!</p>
+     </div>
+ </div>
+ </div>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+      integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+      crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+      </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+      </script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+  <script type="text/javascript" src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+ 
+  <script>
+    const accordion=document.getElementsByClassName
+    ('contentBx');
+   
+
+    for(i=0; i<accordion.length; i++){
+        accordion[i].addEventListener('click', function(){
+            this.classList.toggle('active')
+       
+        })
+        
+    }
+    
+    </script>
+ 
+</body>
+<%- include('./includes/footer.ejs'); %>
+
+</html>

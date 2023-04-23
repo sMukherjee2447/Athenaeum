@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu_elastic.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="	https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+
+</head>
+<style>
+    body {
+        background-image: url(https://images6.alphacoders.com/438/438430.jpg);
+        max-width: 1500px;
+    }
+
+    #image {
+
+        float: left;
+        margin: 0px 15px 0px 0px;
+        box-shadow: 2px 2px 20px rgba(1, 141, 83, 0.507);
+    }
+
+    .det {
+        padding-left: 50px;
+        margin-right: 100px;
+    }
+
+    .bouncy {
+        animation: bouncy 5s infinite linear;
+        position: relative;
+        display: inline-block;
+        padding: 0.2em 1.45em;
+        margin: 0.1em;
+        border: 0.15em solid #CCCCCC;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Segoe UI', 'Roboto', sans-serif;
+        font-weight: 400;
+        color: #000000;
+        background-color: rgba(182, 113, 238, 0.52);
+        text-align: center;
+        position: relative;
+
+    }
+
+    @keyframes bouncy {
+        0% {
+            top: 0em
+        }
+
+        40% {
+            top: 0em
+        }
+
+        43% {
+            top: -0.9em
+        }
+
+        46% {
+            top: 0em
+        }
+
+        48% {
+            top: -0.4em
+        }
+
+        50% {
+            top: 0em
+        }
+
+        100% {
+            top: 0em;
+        }
+    }
+
+
+
+    .bookbutton a:hover {
+        background: #2d0194;
+        color: #fff;
+        transition: 0.5s;
+
+    }
+
+    .bookbutton .button1 {
+        margin-top: 50px;
+        border-radius: 24px;
+    }
+
+    .box {
+        display: flex;
+        /* align-items: center; */
+        /* justify-content: space-between; */
+        /* flex-direction: column; */
+        width: 200px;
+        height: 400px;
+        text-align: center;
+        /* background-color: #3d3c3c; */
+        background: rgb(167, 197, 111);
+        box-shadow: 2px 2px 20px rgba(1, 141, 83, 0.507);
+        /* padding: 20px; */
+        border-radius: 10px;
+        margin: 20px;
+        position: relative;
+        flex-grow: 1;
+    }
+
+    .box img {
+        height: 90px;
+        margin: 10px;
+    }
+
+    .box font {
+        font-size: 1.5rem;
+        color: #0a6116;
+        letter-spacing: 1px;
+        font-weight: 700;
+    }
+
+    .box p {
+        font-size: 1rem;
+        color: #0a6116;
+        display: block;
+        font-weight: 600;
+        overflow: hidden;
+        max-width: 500px;
+        text-overflow: ellipsis;
+        letter-spacing: 0.5px;
+
+    }
+
+    .box a {
+        width: 150px;
+        height: 40px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        border: 2px solid #10003d;
+        text-transform: uppercase;
+        margin: auto;
+        border-radius: 5px;
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #10003d;
+        margin: 0px;
+    }
+
+    .box a:hover {
+        background-color: #0a6116;
+        color: #ffffff;
+        transition: all ease 0.3s;
+        box-shadow: 2px 2px 20px rgba(27, 1, 141, 0.507);
+    }
+
+    .container-fluid {
+        /* max-width: 1000px; */
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .card {
+        position: relative;
+        margin: 20px 0;
+        width: 300px;
+        height: 420px;
+        background: #fff;
+        transform-style: preserve-3d;
+        transform: perspective(2000px);
+        box-shadow: inset 300px 0 50px rgba(0, 0, 0, .5), 0 20px 20px rgba(0, 0, 0, .5);
+        transition: 1s;
+    }
+
+    .card:hover {
+        z-index: 10000;
+        transform: perspective(2000px) rotate(-10deg);
+        box-shadow: inset 20px 0 50px rgba(0, 0, 0, .5), 0 10px 100px rgba(0, 0, 0, .5);
+    }
+
+    .card .Box {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        border: 1px solid #000;
+        box-sizing: border-box;
+        position: relative;
+        transform-origin: left;
+        z-index: 1;
+        transition: 1s cubic-bezier(.15, 1.7, .84, .58);
+        background: #111;
+    }
+
+    .card .Box img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .card:hover .Box {
+        transform: rotateY(-135deg);
+    }
+
+    .card .details {
+        position: absolute;
+        top: 0;
+        left: 0;
+        box-sizing: border-box;
+        padding: 20px;
+        z-index: -1;
+    }
+
+    .youmay {
+
+        display: inline-flex;
+        background-image: linear-gradient(147deg, #f0a671 0%, #7c7979 74%);
+        padding: 10px 15px;
+        border-radius: 50px;
+        color: #fff;
+        box-shadow: 0px 14px 80px rgba(252, 56, 56, 0.4);
+        text-decoration: none;
+        font-weight: 500;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: 1px;
+        margin-left: 50%;
+    }
+</style>
+
+<body>
+
+    <%- include('./includes/header.ejs'); %>
+        <div class="container-fluid my-4" id="contai">
+            <img src="/<%= bookdetails.book_cover%>" id="image" width="270" height="400">
+            <div class="det">
+                <h1 id="bookname">
+                    <%- bookdetails.book_name %>
+                </h1>
+                <h4 id="authorname">
+                    <%- bookdetails.book_author %>
+                </h4>
+
+                <!-- genre text -->
+                <p class="my-4" id="chapview"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                        fill="currentColor" class="bi bi-file-post-fill mx-1" viewBox="0 0 16 16">
+                        <path
+                            d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM4.5 3h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1 0-1zm0 2h7a.5.5 0 0 1 .5.5v8a.5.5 0 0 1-.5.5h-7a.5.5 0 0 1-.5-.5v-8a.5.5 0 0 1 .5-.5z" />
+                    </svg>
+                    <%- bookdetails.book_category %>
+
+                        <!-- Chapters text -->
+                        <span class="mx-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                fill="currentColor" class="bi bi-file-text-fill mx-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM5 4h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm-.5 2.5A.5.5 0 0 1 5 6h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1-.5-.5zM5 8h6a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1zm0 2h3a.5.5 0 0 1 0 1H5a.5.5 0 0 1 0-1z" />
+                            </svg>
+                            <%- bookdetails.book_chapters %> chapters
+
+                                <!-- Views text -->
+                                <span class="mx-4"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                        fill="currentColor" class="bi bi-eye-fill mx-1" viewBox="0 0 16 16">
+                                        <path d="M10.5 8a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0z" />
+                                        <path
+                                            d="M0 8s3-5.5 8-5.5S16 8 16 8s-3 5.5-8 5.5S0 8 0 8zm8 3.5a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z" />
+                                    </svg>
+                                    <%- bookdetails.book_view %> views
+
+                                        <!-- <%- bookdetails.book_about %> -->
+                </p>
+
+                <div class="bookbutton">
+                    <a href="/pdfViewer/<%= bookdetails.book_id%>" class="button1 bouncy"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-book mx-1 mb-1" viewBox="0 0 16 16">
+                            <path
+                                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                        </svg>Read</a>
+                    <!-- <a href="#" class="button1 bouncy" style="animation-delay:0.07s"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="16" height="16" fill="currentColor" class="bi bi-plus-circle mx-1 mb-1"
+                        viewBox="0 0 16 16">
+                        <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                        <path
+                            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                    </svg>Add to Library</a> -->
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+
+        <div class="container">
+
+            <div class="about mt-2">
+                <h2>About Book</h2>
+                <p>
+                    <%- bookdetails.book_about %>
+                </p>
+                <hr>
+            </div>
+            <div class="row mt-5 ">
+                <h1 class="col-12 "><span class="text-danger">You may</span> also like..</h1>
+                <hr>
+            </div>
+
+            <div class="container-fluid">
+                <% for (let data of bookdetails.related_books) { %>
+
+                    <div class="card">
+
+                        <div class="Box">
+                            <img src="/<%= data.book_cover %>">
+
+                        </div>
+
+                        <div class="details">
+                            <h2>
+                                <%- data.book_name %>
+                            </h2>
+                            <p>
+                                <%- data.book_about%>
+
+                                    <a href="/book/<%= data.book_id %>" class="youmay my-4 mx-5"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-book my-1 mx-1" viewBox="0 0 16 16">
+                                            <path
+                                                d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                                        </svg>Read</a>
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <% } %>
+
+
+
+            </div>
+
+        </div>
+
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+            </script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+</body>
+
+</html>

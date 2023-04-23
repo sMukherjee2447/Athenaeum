@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu_elastic.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="	https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+</head>
+<style>
+    .search {
+        border-radius: 24px;
+        background-color: transparent;
+        border-style: none;
+    }
+
+    .login-wrap {
+        width: 100%;
+        margin: auto;
+        max-width: 525px;
+        min-height: 670px;
+        position: relative;
+
+        /* background: url(https://images.unsplash.com/photo-1571277749544-67962c91869b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=80) no-repeat center; */
+        box-shadow: 0 12px 15px 0 rgba(124, 118, 118, 0.24), 0 17px 50px 0 rgba(0, 0, 0, .19);
+    }
+
+    .login-html {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        padding: 90px 70px 50px 70px;
+        /* background: rgba(69, 70, 68, 0.9); */
+    }
+
+    .login-html .sign-in-htm,
+    .login-html .sign-up-htm {
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        position: absolute;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+        transition: all .4s linear;
+    }
+
+    .login-html .sign-in,
+    .login-html .sign-up,
+    .login-form .group .check {
+        display: none;
+    }
+
+    .login-html .tab,
+    .login-form .group .label,
+    .login-form .group .button {
+        text-transform: uppercase;
+    }
+
+    .login-html .tab {
+        font-size: 22px;
+        margin-right: 15px;
+        padding-bottom: 5px;
+        margin: 0 15px 10px 0;
+        display: inline-block;
+        border-bottom: 2px solid transparent;
+    }
+
+    .login-html .sign-in:checked+.tab,
+    .login-html .sign-up:checked+.tab {
+        color: #fff;
+        border-color: #1161ee;
+    }
+
+    .login-form {
+        min-height: 345px;
+        position: relative;
+        perspective: 1000px;
+        transform-style: preserve-3d;
+    }
+
+    .login-form .group {
+        margin-bottom: 15px;
+    }
+
+    .login-form .group .label,
+    .login-form .group .input,
+    .login-form .group .button {
+        width: 100%;
+        color: #fff;
+        display: block;
+    }
+
+    .login-form .group .input,
+    .login-form .group .button {
+        border: none;
+        padding: 15px 20px;
+        border-radius: 25px;
+        background: rgba(175, 170, 170, 0.1);
+    }
+
+    .login-form .group input[data-type="password"] {
+
+        -webkit-text-security: circle;
+    }
+
+    .login-form .group .label {
+        color: #aaa;
+        font-size: 12px;
+    }
+
+    .login-form .group .button {
+        background: #1161ee;
+    }
+
+    .login-form .group label .icon {
+        width: 15px;
+        height: 15px;
+        border-radius: 2px;
+        position: relative;
+        display: inline-block;
+        background: rgba(141, 123, 123, 0.1);
+    }
+
+    .login-form .group label .icon:before,
+    .login-form .group label .icon:after {
+        content: '';
+        width: 10px;
+        height: 2px;
+        background: #fff;
+        position: absolute;
+        transition: all .2s ease-in-out 0s;
+    }
+
+    .login-form .group label .icon:before {
+        left: 3px;
+        width: 5px;
+        bottom: 6px;
+        transform: scale(0) rotate(0);
+    }
+
+    .login-form .group label .icon:after {
+        top: 6px;
+        right: 0;
+        transform: scale(0) rotate(0);
+    }
+
+    .login-form .group .check:checked+label {
+        color: #fff;
+    }
+
+    .login-form .group .check:checked+label .icon {
+        background: #1161ee;
+    }
+
+    .login-form .group .check:checked+label .icon:before {
+        transform: scale(1) rotate(45deg);
+    }
+
+    .login-form .group .check:checked+label .icon:after {
+        transform: scale(1) rotate(-45deg);
+    }
+
+    .login-html .sign-in:checked+.tab+.sign-up+.tab+.login-form .sign-in-htm {
+        transform: rotate(0);
+    }
+
+    .login-html .sign-up:checked+.tab+.login-form .sign-up-htm {
+        transform: rotate(0);
+    }
+
+    .hr {
+        height: 2px;
+        margin: 60px 0 50px 0;
+        background: rgba(151, 151, 153, 0.2);
+    }
+
+    .foot-lnk {
+        text-align: center;
+    }
+
+    .modal .modal-popout-bg {
+
+        background: rgba(61, 61, 63, 0.9);
+
+    }
+
+    .head {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+    }
+
+    .update {
+        margin-top: 25px;
+
+    }
+
+    .updates {
+        margin-top: 25px;
+
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    .search-box {
+        position: relative;
+        height: 50px;
+        width: 50px;
+
+        border-radius: 50%;
+
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box.active {
+        width: 250px;
+    }
+
+    .search-box input {
+        width: 100%;
+        height: 100%;
+        border: none;
+        border-radius: 50px;
+        background: transparent;
+        outline: none;
+        padding: 0 60px 0 20px;
+        font-size: 18px;
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box input.active {
+        opacity: 1;
+    }
+
+    .search-box input::placeholder {
+        color: #a6a6a67e;
+    }
+
+    .search-box .search-icon {
+        position: absolute;
+        right: 0px;
+        top: 50%;
+        transform: translateY(-50%);
+        height: 60px;
+        width: 60px;
+        background: rgb(228, 228, 225);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 60px;
+        font-size: 22px;
+        color: #c6c0e5;
+        cursor: pointer;
+        z-index: 1;
+        transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box .search-icon.active {
+        right: 5px;
+        height: 30px;
+        line-height: 30px;
+        width: 30px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 0.486);
+        transform: translateY(-50%) rotate(360deg);
+    }
+
+    .search-box .cancel-icon {
+        position: absolute;
+        right: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 25px;
+        color: #000000;
+        cursor: pointer;
+        transition: all 0.5s 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    .search-box .cancel-icon.active {
+        right: -40px;
+        transform: translateY(-50%) rotate(360deg);
+    }
+
+    .search-box .search-data {
+        text-align: center;
+        padding-top: 7px;
+        color: rgba(255, 255, 255, 0.479);
+        font-size: 18px;
+        word-wrap: break-word;
+    }
+
+    .search-box .search-data.active {
+        display: none;
+    }
+
+    .navbar-header {
+        margin-left: 260px;
+        font-family: 'Viaoda Libre', cursive;
+
+    }
+
+    .container {
+        max-width: 1000px;
+        margin: 10px auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .navbar {
+        position: relative;
+        max-width: 1300px;
+        margin: 20px auto;
+        padding: 10px;
+        background: rgba(255, 255, 255, 0.445);
+        box-sizing: border-box;
+        border-radius: 4px;
+    }
+</style>
+
+<body>
+
+    <nav class="navbar  navbar-expand-lg navbar-light ">
+        <div class="container-fluid">
+            <a href="/" class="home"><img src="https://i.ibb.co/3dfvTRn/logo-removebg-preview.png" width="100px"
+                    height="50px" alt="Logo"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle mx-4" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Browse
+                        </a>
+
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <% for(let data of headerfooterdata) { %>
+                                <li><a class="dropdown-item" href="/category/<%=data.cag_id %>">
+                                        <%- data.cag_name %>
+                                    </a></li>
+                                <!-- <li><a class="dropdown-item" href="#">Academics</a></li>
+                            <li><a class="dropdown-item" href="#">Romance</a></li>
+                            <li><a class="dropdown-item" href="#">Comedy</a></li> -->
+                                <% } %>
+                        </ul>
+
+                    </li>
+                    <div class="navbar-nav">
+                        <button onclick="location.href = '/explore';" class="search">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                class="bi bi-compass mx-1" viewBox="0 0 16 16">
+                                <path
+                                    d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+                                <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+                            </svg>Explore</button>
+                    </div>
+
+                </ul>
+
+
+                <div class="navbar-nav">
+                    <button onclick="location.href = '/library';" class="search mx-2"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-collection mx-1" viewBox="0 0 16 16">
+                            <path
+                                d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z" />
+                        </svg>Library</button>
+                </div>
+                <ul class="navbar-nav">
+                    <!-- Button trigger modal -->
+                    <div class="search-box mx-3">
+                        <form action="/book_search">
+                            <input type="text" placeholder="Type to Search"
+                                style="font-family: 'Lucida Sans', sans-serif; border-radius: 2px;" name="search_text">
+                            <div class="search-icon">
+                                <button class="search">
+                                    <i class='fas fa-search' style="font-size: medium; color: rgb(5, 5, 5);"></i>
+                                </button>
+                            </div>
+                            <div class="cancel-icon">
+                                <i class="fas fa-times"></i>
+                            </div>
+                            <div class="search-data">
+                            </div>
+                        </form>
+                    </div>
+                </ul>
+
+
+                <button type="button" class="search  mx-4" onclick="location.href='/user-signin';"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
+                        class="bi bi-person-fill" viewBox="0 0 16 16">
+                        <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                    </svg>
+
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">sign in</span>
+                </button>
+
+
+            </div>
+
+        </div>
+
+        </div>
+        </div>
+        </div>
+        </div>
+        </div>
+    </nav>
+    <script>
+        const searchBox = document.querySelector(".search-box");
+        const searchBtn = document.querySelector(".search-icon");
+        const cancelBtn = document.querySelector(".cancel-icon");
+        const searchInput = document.querySelector("input");
+        const searchData = document.querySelector(".search-data");
+        searchBtn.onclick = () => {
+            searchBox.classList.add("active");
+            searchBtn.classList.add("active");
+            searchInput.classList.add("active");
+            cancelBtn.classList.add("active");
+            searchInput.focus();
+            if (searchInput.value != "") {
+                var values = searchInput.value;
+                searchData.classList.remove("active");
+                searchData.innerHTML = "You just typed " + "<span style='font-weight: 500;'+>" + values + "</span>";
+            } else {
+                searchData.textContent = "";
+            }
+        }
+        cancelBtn.onclick = () => {
+            searchBox.classList.remove("active");
+            searchBtn.classList.remove("active");
+            searchInput.classList.remove("active");
+            cancelBtn.classList.remove("active");
+            searchData.classList.toggle("active");
+            searchInput.value = "";
+        }
+    </script>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+        integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+        </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+</body>
+
+</style>
+
+
+
+</html>

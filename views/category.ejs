@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="Fiction (1).css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu_elastic.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="	https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+    .box-content {
+        max-width: 1200px;
+        margin: 10px auto;
+        /* margin-right: 20px; */
+        margin-top: -20px;
+        padding: 100px;
+        display: block;
+        /* flex-wrap: wrap; */
+        justify-content: space-between;
+        text-align: justify;
+
+    }
+
+    .box-content img {
+        position: relative;
+        box-sizing: border-box;
+        border-radius: 10px;
+        width: 160px;
+        height: 240px;
+        /* padding: 70px; */
+        max-width: 100%;
+
+    }
+
+
+    .box-content a {
+        float: left;
+        width: 20px auto;
+    }
+
+    .b {
+        /*justify-content: center;*/
+        box-sizing: border-box;
+        background-color: rgba(231, 87, 3, 0.678);
+        border-radius: 18px;
+        float: left;
+        padding: 10px;
+        border: transparent;
+        position: relative;
+        margin-right: 50px;
+        /* max-width: 1500px; */
+        margin-bottom: 5px;
+
+    }
+
+    #bs {
+        box-sizing: border-box;
+        background-color: rgba(245, 222, 179, 0.281);
+        border-radius: 20px;
+        padding: 15px;
+        padding-top: 30px;
+        justify-content: center;
+    }
+
+
+
+
+    .b:hover {
+        background-color: #cad8f0;
+        box-sizing: border-box;
+        border-radius: 18px;
+        box-shadow: 2px 2px 20px rgba(0, 0, 0, .2);
+    }
+
+    .box-content p {
+        /* font-family: bignoodletitling; */
+        font-size: 1rem;
+        margin-top: 20px;
+
+    }
+
+    .box-content h3 {
+        font-family: 'Poppins', sans-serif;
+
+
+    }
+
+    body {
+        background-image: url(https://images6.alphacoders.com/438/438430.jpg);
+        background-size: cover;
+        text-align: center;
+        font-family: 'Poppins', sans-serif;
+    }
+</style>
+
+<body>
+    <%- include('./includes/header.ejs'); %>
+
+
+        <div class="box-content mb-3">
+            <% for (let data of categorydata) { %>
+                <div class="row mt-3" id="bs">
+
+                    <div class="image col-md-4">
+                        <img src="/<%= data.book_cover%>">
+
+                    </div>
+                    <div class="col-md-6">
+                        <h2>
+                            <%- data.book_name%>
+                        </h2>
+                        <b>
+                            <%- data.book_author %>
+                        </b>
+                        <p>
+                            <%- data.book_about %>
+                        </p>
+
+                        <div>
+                            <button onclick="location.href = '/pdfViewer/<%= data.book_id%>';" class=" btn mb-6"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-book mx-1 mb-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M1 2.828c.885-.37 2.154-.769 3.388-.893 1.33-.134 2.458.063 3.112.752v9.746c-.935-.53-2.12-.603-3.213-.493-1.18.12-2.37.461-3.287.811V2.828zm7.5-.141c.654-.689 1.782-.886 3.112-.752 1.234.124 2.503.523 3.388.893v9.923c-.918-.35-2.107-.692-3.287-.81-1.094-.111-2.278-.039-3.213.492V2.687zM8 1.783C7.015.936 5.587.81 4.287.94c-1.514.153-3.042.672-3.994 1.105A.5.5 0 0 0 0 2.5v11a.5.5 0 0 0 .707.455c.882-.4 2.303-.881 3.68-1.02 1.409-.142 2.59.087 3.223.877a.5.5 0 0 0 .78 0c.633-.79 1.814-1.019 3.222-.877 1.378.139 2.8.62 3.681 1.02A.5.5 0 0 0 16 13.5v-11a.5.5 0 0 0-.293-.455c-.952-.433-2.48-.952-3.994-1.105C10.413.809 8.985.936 8 1.783z" />
+                                </svg>READ</button>
+                            <button onclick="location.href = '/library'" class="btn mb-6"><svg
+                                    xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-plus-circle mx-1 mb-1" viewBox="0 0 16 16">
+                                    <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                                    <path
+                                        d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+                                </svg>ADD</button></a>
+                        </div>
+
+                    </div>
+
+                    <!-- <hr> -->
+                </div>
+                <% } %>
+
+        </div>
+
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+            integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
+            </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+            integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+            </script>
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+        <script type="text/javascript" src="script.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+        <%- include('./includes/footer.ejs'); %>
+
+</body>
+
+
+</html>

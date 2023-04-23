@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" type="text/css" href="css/normalize.css" />
+    <link rel="stylesheet" type="text/css" href="css/demo.css" />
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/menu_elastic.css" />
+    <script src="js/snap.svg-min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="	https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/css/swiper.css">
+</head>
+<style>
+    .butt {
+        border-radius: 24px;
+        background-color: transparent;
+        border-style: none;
+
+    }
+
+    .butt:hover {
+        border-radius: 2px;
+        position: relative;
+        box-shadow: 2px 2px 20px rgb(161, 126, 243);
+        background-color: rgb(155, 148, 147);
+    }
+
+    .Edt {
+        border-radius: 24px;
+        background-color: transparent;
+        border-style: none;
+        margin-left: 980px;
+
+    }
+
+    .Edt:hover {
+        border-radius: 2px;
+        position: relative;
+        box-shadow: 2px 2px 20px rgb(161, 126, 243);
+        background-color: rgb(155, 148, 147);
+    }
+
+
+
+
+
+    .hr {
+        height: 2px;
+        margin: 60px 0 50px 0;
+        background: rgba(151, 151, 153, 0.2);
+    }
+
+
+
+    .modal .modal-popout-bg {
+
+        background: rgba(61, 61, 63, 0.9);
+
+    }
+
+    .head {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: large;
+    }
+
+    .update {
+        margin-top: 25px;
+
+    }
+
+    .updates {
+        margin-top: 25px;
+
+    }
+
+    .column {
+        float: left;
+        width: 50%;
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+
+    .navbar-header {
+        margin-left: 260px;
+        font-family: 'Viaoda Libre', cursive;
+
+    }
+
+
+
+    .Banner {
+        padding-top: 40px;
+        padding-bottom: 20px;
+        background-color: #093e9bbd;
+
+    }
+
+    h2 {
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-transform: uppercase;
+        color: rgb(248, 248, 248);
+        font-size: 50px;
+        font-weight: bold;
+
+    }
+
+
+    /* Sticky footer style and color
+-------------------------------------------------- */
+
+
+    .verticalLine {
+        border-left: thin solid rgb(131, 127, 127);
+        height: 100%;
+        margin-left: 50%;
+    }
+
+    /* #navi {
+        position: relative;
+        display: block;
+        overflow: hidden;
+    }
+
+    html,
+    body {
+        margin: 0px;
+        padding: 0px;
+    } */
+
+    .body_image img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    body {
+        background-image: url(https://images6.alphacoders.com/438/438430.jpg);
+    }
+</style>
+
+<body>
+
+    <%- include('./includes/header.ejs'); %>
+        <div class="Banner my-4" id="block">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2 class="ms-3 ">Library</h2>
+
+
+                    <div>
+                        <div>
+                            <button onclick="location.href = '/library.';" class="butt ms-3 my-4"
+                                style="font-size: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-list-check mx-1" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="M5 11.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3.854 2.146a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 3.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708L2 7.293l1.146-1.147a.5.5 0 0 1 .708 0zm0 4a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+                                </svg>MyList</button>
+
+                            <button onclick="location.href = '/library.';" class="butt ms-5 my-4"
+                                style="font-size: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-hourglass-split mx-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2.5 15a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11zm2-13v1c0 .537.12 1.045.337 1.5h6.326c.216-.455.337-.963.337-1.5V2h-7zm3 6.35c0 .701-.478 1.236-1.011 1.492A3.5 3.5 0 0 0 4.5 13s.866-1.299 3-1.48V8.35zm1 0v3.17c2.134.181 3 1.48 3 1.48a3.5 3.5 0 0 0-1.989-3.158C8.978 9.586 8.5 9.052 8.5 8.351z" />
+                                </svg>History</button>
+
+                            <button onclick="location.href = '/library.';" class="Edt  my-4 " style="font-size: 20px;">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-pencil-fill mx-1" viewBox="0 0 16 16">
+                                    <path
+                                        d="M12.854.146a.5.5 0 0 0-.707 0L10.5 1.793 14.207 5.5l1.647-1.646a.5.5 0 0 0 0-.708l-3-3zm.646 6.061L9.793 2.5 3.293 9H3.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.207l6.5-6.5zm-7.468 7.468A.5.5 0 0 1 6 13.5V13h-.5a.5.5 0 0 1-.5-.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.5-.5V10h-.5a.499.499 0 0 1-.175-.032l-.179.178a.5.5 0 0 0-.11.168l-2 5a.5.5 0 0 0 .65.65l5-2a.5.5 0 0 0 .168-.11l.178-.178z" />
+                                </svg>Edit</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="body_image">
+            <img src="https://i.ibb.co/qMbpXmX/imageedit-2-2342227761.png" alt="imageedit-2-2342227761">
+
+        </div>
+
+        <div class="body_text">
+            <p class="text-center">No such data found</p>
+            <p class="text-center">its time to <a href="/explore">Explore</a> </p>
+        </div>
+
+
+        <div class="container">
+            <br>
+            <hr>
+        </div>
+
+
+        <%- include('./includes/footer.ejs'); %>
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+                integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+                crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+                integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+                crossorigin="anonymous">
+                </script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+                integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+                crossorigin="anonymous">
+                </script>
+            <script type="text/javascript"
+                src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/5.4.5/js/swiper.min.js"></script>
+            <script type="text/javascript" src="script.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.0.0-alpha1/js/bootstrap.min.js"></script>
+
+</body>
+
+</html>
